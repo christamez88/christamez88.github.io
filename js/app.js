@@ -1,1 +1,1 @@
-//alert("HI");
+var app = angular.module("myApp", []);
