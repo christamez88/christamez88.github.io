@@ -2,23 +2,30 @@
 <html>
 <head>
 <link href="http://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+<link href="css/app.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <div class="container">
+    <nav class="navbar navbar-toggleable-md bg-faded">
+        <a class="navbar-brand" href="#">Navbar</a>
+    </nav>
 </head>
 <body ng-app="myApp">
+    
     <div class="main" ng-controller="MainController">
 		<h1> {{ title }} </h1>
         
-        <div ng-repeat="x in products" class="col-md-6">
+        <div ng-repeat="x in products" class="col-md-12">
             <div class="thumbnail">
                 <img src="{{ x.cover }}">
-                <p class="title"> {{ x.name }} </p>
-                <p class="price"> {{ x.price | currency }} </p>  
-                <p class="date"> {{ x.date | date }} </p>
+                <p class="title">Workout Name: {{ x.name }} </p>
+                <p class="intensity">Level of Intensity: {{ x.intensity | percentage }} </p>  
+                <p class="rest">Rest: {{ x.rest }} </p>  
+                <p class="date">Times per week: {{ x.timesPerWeek }} </p>
             </div>
         </div>
 		
     </div>
-
+</div>
 	<!-- Modules -->
 	<script src="js/app.js"></script>
 
@@ -26,4 +33,6 @@
     <script src="js/controllers/MainController.js"></script>
 
 </body>
+<footer>
+</footer>
 </html>
